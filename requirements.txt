@@ -7,3 +7,4 @@ httpx
 duckdb
 pyarrow
 redis
+python-multipart
