@@ -1,5 +1,7 @@
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Body
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import RedirectResponse
 from typing import List, Optional, Dict, Any, Sequence, Tuple
 import pandas as pd
 from io import BytesIO
@@ -39,6 +41,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+_static_dir = os.path.join(os.path.dirname(__file__), "static")
+if os.path.isdir(_static_dir):
+    app.mount("/app", StaticFiles(directory=_static_dir, html=True), name="app")
 
 def _read_ai_file_config() -> dict:
     """
@@ -536,7 +542,8 @@ class DataResponse:
 
 @app.get("/")
 async def root():
-    """Health and discovery endpoint."""
+    if os.path.isdir(os.path.join(os.path.dirname(__file__), "static")):
+        return RedirectResponse(url="/app/")
     return {"status": "ok", "service": "Universal Data Uploader", "endpoints": ["/upload", "/docs"]}
 
 

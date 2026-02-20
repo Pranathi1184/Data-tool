@@ -1,11 +1,9 @@
 fastapi
 uvicorn[standard]
 pandas
-numpy
 openpyxl
-xlrd>=2.0.1
-python-multipart
+xlrd
+httpx
 duckdb
 pyarrow
 redis
-httpx
