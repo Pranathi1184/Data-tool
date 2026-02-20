@@ -2,7 +2,7 @@
 
 Excel/CSV/JSON data massaging platform with a FastAPI backend and a React dashboard. It covers the end‑to‑end workflow: upload files, select sheets, join datasets with key suggestions, apply repeatable transformations, live preview, and export to multiple formats. A production Dockerfile and a Render blueprint are included.
 
-Live Demo:[ https://your-dashboard-url.example.com](https://data-tool-vsz2.onrender.com)
+Live Demo:[https://data-tool-vsz2.onrender.com](https://data-tool-vsz2.onrender.com)
 
 ## Table of Contents
 
