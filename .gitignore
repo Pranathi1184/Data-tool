@@ -1,0 +1,9 @@
+ai_config.json
+.env
+__pycache__/
+*.pyc
+.venv/
+dashboard/node_modules
+dashboard/dist
+node_modules
+*.log

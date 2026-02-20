@@ -1,0 +1,23 @@
+{
+  "name": "Test Template",
+  "schema_version": "1.0.0",
+  "recipe": [
+    {
+      "type": "standardizeDate",
+      "config": {
+        "col": "Date"
+      }
+    },
+    {
+      "type": "calculateNetProfit"
+    },
+    {
+      "type": "sortByDate",
+      "config": {
+        "col": "Date",
+        "order": "asc"
+      }
+    }
+  ],
+  "saved_at": "2026-02-19T17:37:10.892742"
+}

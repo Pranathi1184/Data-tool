@@ -1,0 +1,13 @@
+.venv
+__pycache__/
+*.pyc
+.git
+.gitignore
+.trae
+node_modules
+dashboard/node_modules
+dashboard/dist
+*.log
+Dockerfile*
+README.md
+render.yaml

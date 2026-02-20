@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: midas-api
+    env: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    autoDeploy: true
+    healthCheckPath: /
+    envVars:
+      - key: REDIS_URL
+        sync: false
+      - key: PORT
+        value: "8000"
+  - type: static
+    name: midas-dashboard
+    rootDir: dashboard
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_BASE
+        fromService:
+          name: midas-api
+          type: web
+          property: url

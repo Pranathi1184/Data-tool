@@ -1,0 +1,23 @@
+{
+  "name": "Smoke Template",
+  "schema_version": "1.0.0",
+  "recipe": [
+    {
+      "type": "standardizeDate",
+      "config": {
+        "col": "Date"
+      }
+    },
+    {
+      "type": "calculateNetProfit"
+    },
+    {
+      "type": "sortByDate",
+      "config": {
+        "col": "Date",
+        "order": "asc"
+      }
+    }
+  ],
+  "saved_at": "2026-02-19T18:18:42.398880"
+}

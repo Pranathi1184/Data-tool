@@ -1,0 +1,64 @@
+:root{--bg:#f0f4f8;--panel:#ffffff;--muted:#6b7280;--primary:#3b82f6;--accent:#16a34a;--danger:#dc2626;--border:#e2e8f0;--text:#0b1220;--subtle:#f3f4f6;--brand:#1d4ed8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Arial;font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.container{display:grid;grid-template-columns:340px 1fr 380px;gap:20px;padding:20px;height:100%;max-width:1400px;margin:0 auto}
+.header{grid-column:1/-1;display:flex;align-items:center;gap:20px;background:#dbeafe;border:1px solid var(--border);border-radius:16px;padding:0 24px;position:sticky;top:0;z-index:5;box-shadow:0 6px 20px rgba(17,24,39,.08);height:92px}
+.brand{display:flex;align-items:center;gap:10px;margin-right:auto}
+.logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--brand));box-shadow:0 6px 16px rgba(59,130,246,.35);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800}
+.title{font-size:22px;font-weight:800;letter-spacing:-0.01em}
+.header .row{gap:12px;margin:0}
+.btns{display:flex;gap:12px;align-items:center}
+.btn{background:var(--primary);color:#ffffff;border:none;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer;transition:all .15s ease;box-shadow:0 2px 8px rgba(17,24,39,.05)}
+.btn.mint{background:#10b981;color:#ffffff}
+.header input,.header select{height:40px;padding:8px 12px}
+.btn:hover{filter:brightness(0.95)}
+.btn:active{transform:translateY(1px)}
+.btn:disabled{opacity:.6;cursor:not-allowed}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:16px;display:flex;flex-direction:column;min-height:0;box-shadow:0 10px 30px rgba(17,24,39,.06)}
+.panel h3{margin:0 0 10px 0;font-size:16px;color:#0f172a}
+.panel.tools{max-height:calc(100vh - 160px);overflow:auto}
+.upload{border:2px dashed var(--border);border-radius:16px;display:flex;align-items:center;justify-content:center;gap:12px;padding:28px;background:#f1f5f9}
+.upload.drag{border-color:var(--primary);background:#e0e7ff}
+.chip{background:#eef2ff;border:1px solid #c7d2fe;padding:8px 12px;border-radius:999px;font-size:12px;cursor:pointer;color:#1e3a8a}
+.chip.primary{border-color:#93c5fd;background:#e0f2ff}
+.sidebar{gap:8px}
+.step{display:flex;align-items:center;justify-content:space-between;background:var(--subtle);border:1px solid var(--border);border-radius:10px;padding:10px}
+.preview{overflow:auto;border-radius:10px;border:1px solid var(--border);background:#ffffff}
+thead th{position:sticky;top:0;background:#eaf2ff;z-index:1}
+tbody tr:nth-child(odd){background:#fafcff}
+th,td{border-bottom:1px solid var(--border);padding:10px;text-align:left;font-size:12px}
+th{color:#374151;font-weight:700}
+input,select{background:#ffffff;color:#111827;border:1px solid var(--border);border-radius:10px;padding:10px;outline:none;transition:border-color .15s ease, box-shadow .15s ease}
+.row{display:flex;gap:12px;align-items:center}
+.grow{flex:1}
+/* Wrapping rows avoid overlapping on narrow widths */
+.row{flex-wrap:wrap}
+
+/* Toast notifications */
+.toast{position:fixed;right:24px;bottom:24px;background:#ffffff;border:1px solid var(--border);border-radius:12px;box-shadow:0 10px 30px rgba(17,24,39,.12);padding:10px 14px;color:#0f172a;z-index:50;display:flex;align-items:center;gap:10px;min-width:220px}
+.toast.info{border-color:#bfdbfe}
+.toast.warn{border-color:#fde68a;background:#fffbeb}
+.toast.error{border-color:#fecaca;background:#fff1f2}
+.toast .close{margin-left:auto;cursor:pointer;color:#6b7280}
+
+/* File list styles */
+.file-list{display:flex;flex-direction:column;gap:8px}
+.file-item{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);border-radius:10px;padding:8px}
+
+/* Ensure inputs never overflow their panel */
+.step{align-items:stretch}
+.step .row{width:100%}
+.row .grow{flex:1 1 240px;min-width:0;max-width:100%}
+.panel input.grow,.panel .row input.grow{min-width:0;max-width:100%}
+.panel .row select{max-width:100%}
+.panel .row input[type="text"], .panel .row input[type="number"], .panel .row input[type="date"]{max-width:100%}
+
+/* Responsive layout */
+@media (max-width: 1200px){
+  .container{grid-template-columns:1fr}
+  .panel.tools{max-height:unset}
+}
+/* Sheet picker inline card */
+.sheet-picker{margin-top:10px;border:1px dashed var(--border);border-radius:12px;padding:12px;background:#fafafa}
+.sheet-header{font-weight:700;font-size:12px;margin-bottom:6px}
+.sheet-list{display:flex;flex-wrap:wrap;gap:8px}

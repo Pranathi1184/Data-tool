@@ -1,0 +1,33 @@
+{
+  "name": "dave",
+  "schema_version": "1.0.0",
+  "recipe": [
+    {
+      "id": "1771534120689-0.7999870443326453",
+      "type": "standardizeDate",
+      "config": {
+        "col": "Date"
+      }
+    },
+    {
+      "id": "1771534120689-0.19294827675263726",
+      "type": "calculateNetProfit"
+    },
+    {
+      "id": "1771534120689-0.2521543372351308",
+      "type": "sortByDate",
+      "config": {
+        "col": "Date",
+        "order": "asc"
+      }
+    },
+    {
+      "id": "1771534126205",
+      "type": "standardizeDate",
+      "config": {
+        "col": "Date"
+      }
+    }
+  ],
+  "saved_at": "2026-02-19T20:49:02.649055"
+}

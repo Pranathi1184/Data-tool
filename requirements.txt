@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+pandas
+numpy
+openpyxl
+xlrd>=2.0.1
+python-multipart
+duckdb
+pyarrow
+redis
+httpx
