@@ -24,6 +24,10 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui
 .sidebar{gap:8px}
 .step{display:flex;align-items:center;justify-content:space-between;background:var(--subtle);border:1px solid var(--border);border-radius:10px;padding:10px}
 .preview{overflow:auto;border-radius:10px;border:1px solid var(--border);background:#ffffff}
+/* Ensure wide tables scroll inside the card, not the page */
+.preview{max-width:100%;overflow-x:auto}
+.preview table{min-width:max-content}
+html, body{overflow-x:hidden}
 thead th{position:sticky;top:0;background:#eaf2ff;z-index:1}
 tbody tr:nth-child(odd){background:#fafcff}
 th,td{border-bottom:1px solid var(--border);padding:10px;text-align:left;font-size:12px}
